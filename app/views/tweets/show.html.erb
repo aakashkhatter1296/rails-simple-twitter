@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <% @user = User.find(@tweet.user_id) %>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @tweet.body %>
+</p>
+
+<p>
+  <strong>Retweets:</strong>
+  <%= @tweet.retweets %>
+</p>
+
+<p>
+  <strong>Istweet:</strong>
+  <%= @tweet.isTweet %>
+</p>
+
+<%= link_to 'Back', tweets_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tweets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Body</th>
+      <th>Retweets</th>
+      <th>Istweet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= User.find(tweet.user_id).username %></td>
+        <td><%= tweet.body %></td>
+        <td><%= tweet.retweets %></td>
+        <td><%= tweet.isTweet %></td>
+        <td><%= link_to 'Show', tweet %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tweet', new_tweet_path %>
